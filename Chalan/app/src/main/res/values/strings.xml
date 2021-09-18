@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Chalan</string>
+    <string name="chalan">Chalan</string>
+    <string name="let_s_get_started">Empecemos!</string>
+    <string name="image_contentDescription">imagen</string>
+    <string name="intro_text_description">Encuentra a la persona que necesitas para completar tu proyecto o reparación.</string>
+    <string name="sign_in">YA TENGO UNA CUENTA</string>
+    <string name="sign_up">REGISTRARSE</string>
+    <string name="sign_up_description_text">Introduce tu nombre, email y contraseña, para registrarte.</string>
+    <string name="sign_in_description_text">Introduce tu email y contraseña para entrar al sistema.</string>
+    <string name="name">Nombre</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="please_click_back_again_to_exit">Da click de nuevo para salir.</string>
+    <string name="please_wait">Porvaor espera&#8230;</string>
+    <string name="nav_my_profile">Mi Perfil</string>
+    <string name="nav_sign_out">Salir</string>
+    <string name="username">Usuario</string>
+    <string name="mobile">Celular</string>
+    <string name="update">ACTUALIZAR</string>
+    <string name="my_profile_title">Mi Perfil</string>
+    <string name="registrarse">REGISTRARSE</string>
+    <string name="ya_tengo_una_cuenta">YA TENGO UNA CUENTA</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="albanil">Albañil</string>
+    <string name="selecciona_el_servicio_que_buscas">Selecciona el servicio que buscas:</string>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>

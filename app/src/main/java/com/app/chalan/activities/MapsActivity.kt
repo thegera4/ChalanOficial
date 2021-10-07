@@ -12,6 +12,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.app.chalan.databinding.ActivityMapsBinding
+import com.google.android.gms.maps.model.Marker
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -37,10 +38,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
         // Agregar marcador en las coordenadas indicadas y hacer zoom de 14f
         val torreon = LatLng(25.53986916895781, -103.40568068906825)
-        mMap.addMarker(MarkerOptions().position(torreon).title("Torreón, Coah."))
+        mMap.addMarker(MarkerOptions().position(torreon).title("Torreón, Coah.")
+            .draggable(true))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(torreon))
         val newLatLngZoom = CameraUpdateFactory.newLatLngZoom(torreon,14f)
         googleMap.animateCamera(newLatLngZoom)
+
     }
 
     private fun setupActionBar() {

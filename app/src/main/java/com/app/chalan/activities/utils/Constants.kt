@@ -1,4 +1,4 @@
-package com.app.chalan.activities
+package com.app.chalan.activities.utils
 
 import android.app.Activity
 import android.content.Intent

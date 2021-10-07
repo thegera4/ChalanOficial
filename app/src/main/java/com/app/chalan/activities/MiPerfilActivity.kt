@@ -5,7 +5,6 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -13,6 +12,9 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.app.chalan.R
+import com.app.chalan.activities.firebase.FirestoreClass
+import com.app.chalan.activities.models.User
+import com.app.chalan.activities.utils.Constants
 import com.app.chalan.databinding.ActivityMiPerfilBinding
 import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage

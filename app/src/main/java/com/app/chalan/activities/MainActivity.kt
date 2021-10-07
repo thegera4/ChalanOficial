@@ -2,7 +2,6 @@ package com.app.chalan.activities
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -11,9 +10,10 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
 import com.app.chalan.R
+import com.app.chalan.activities.firebase.FirestoreClass
+import com.app.chalan.activities.models.User
 import com.app.chalan.databinding.ActivityMainBinding
 import com.bumptech.glide.Glide
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 

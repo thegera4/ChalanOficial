@@ -1,10 +1,16 @@
-package com.app.chalan.activities
+package com.app.chalan.activities.firebase
 
 //Aqui van las funciones principales que tengan que ver con FireStore
 
 import android.app.Activity
 import android.util.Log
 import android.widget.Toast
+import com.app.chalan.activities.EntrarActivity
+import com.app.chalan.activities.MainActivity
+import com.app.chalan.activities.MiPerfilActivity
+import com.app.chalan.activities.RegistrarseActivity
+import com.app.chalan.activities.models.User
+import com.app.chalan.activities.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions

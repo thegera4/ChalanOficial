@@ -1,4 +1,4 @@
-package com.app.chalan.activities
+package com.app.chalan.activities.models
 
 import android.os.Parcel
 import android.os.Parcelable

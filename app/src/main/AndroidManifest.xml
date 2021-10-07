@@ -41,7 +41,7 @@
             android:exported="true"
             android:label="@string/title_activity_maps"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
         <activity
             android:name=".activities.MiPerfilActivity"
             android:exported="true"

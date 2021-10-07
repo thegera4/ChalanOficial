@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import com.app.chalan.activities.firebase.FirestoreClass
 import com.app.chalan.databinding.ActivitySplashScreenBinding
 
 @Suppress("DEPRECATION")

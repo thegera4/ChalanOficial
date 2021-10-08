@@ -26,4 +26,5 @@
     <string name="selecciona_el_servicio_que_buscas">Selecciona el servicio que buscas:</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="CodigoPostal">O Introduce el codigo postal manualmente</string>
+    <string name="descripcion_mapa">Selecciona el lugar donde quieres el servicio:</string>
 </resources>

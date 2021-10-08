@@ -60,7 +60,7 @@ class EntrarActivity : BaseActivity() {
                     if (task.isSuccessful){
                         Log.d("Sign in", "signInWithEmail:success")
                         val user = auth.currentUser
-                        startActivity(Intent(this, MainActivity::class.java))
+                        startActivity(Intent(this, BuscarOfrecerActivity::class.java))
                     } else {
                         Log.w("Sign in", "signInWithEmail:failure", task.exception)
                         Toast.makeText(baseContext, "Fallo en la autentificacion." +
@@ -90,7 +90,7 @@ class EntrarActivity : BaseActivity() {
     //para cuando quiere entrar (no registrarse)
     fun signInSuccess(user: User){
         hideProgressDialog()
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, BuscarOfrecerActivity::class.java))
         finish()
     }
 

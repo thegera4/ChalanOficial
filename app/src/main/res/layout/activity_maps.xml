@@ -27,17 +27,28 @@
       </androidx.appcompat.widget.Toolbar>
    </com.google.android.material.appbar.AppBarLayout>
 
+   <TextView
+       android:id="@+id/tvDescripcionMaps"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/descripcion_mapa"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/toolbarAppBarLayoutMap"
+       app:layout_constraintBottom_toTopOf="@+id/map"/>
+
    <fragment
        android:id="@+id/map"
        class="com.google.android.gms.maps.SupportMapFragment"
-       android:layout_width="412dp"
-       android:layout_height="631dp"
+       android:layout_width="414dp"
+       android:layout_height="558dp"
        app:layout_constraintBottom_toTopOf="@+id/cvCodigoPostal"
        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.666"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/toolbarAppBarLayoutMap" />
+       app:layout_constraintTop_toBottomOf="@id/tvDescripcionMaps" />
 
-      <androidx.cardview.widget.CardView
+   <androidx.cardview.widget.CardView
           android:id="@+id/cvCodigoPostal"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"

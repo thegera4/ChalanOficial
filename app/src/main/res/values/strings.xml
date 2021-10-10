@@ -27,4 +27,9 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="CodigoPostal">O Introduce el codigo postal manualmente</string>
     <string name="descripcion_mapa">Selecciona el lugar donde quieres el servicio:</string>
+    <string name="problema_foto_referencia">Inserta una foto de referencia para tu problema o consulta:</string>
+    <string name="problema_describe_problema">Describe tu problema brevemente para que la persona que te ofrecera el servicio pueda saber que herramientas o suministros necesitara para ayudarte:</string>
+    <string name="omitir">Omitir</string>
+    <string name="enviar">Enviar</string>
+    <string name="problema_descripcion_usuario">Describe tu problema aqui</string>
 </resources>

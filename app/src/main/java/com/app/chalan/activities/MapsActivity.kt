@@ -1,5 +1,6 @@
 package com.app.chalan.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
@@ -43,6 +44,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(torreon))
         val newLatLngZoom = CameraUpdateFactory.newLatLngZoom(torreon,14f)
         googleMap.animateCamera(newLatLngZoom)
+
+        // Agregar listeners para marcador
+        mMap.setOnMarkerDragListener(object: GoogleMap.OnMarkerDragListener{
+            override fun onMarkerDragStart(marker: Marker) {
+                //Codigo para cuando marcador se empieza a arrastrar
+            }
+
+            override fun onMarkerDrag(marker: Marker) {
+                //Codigo para cuando marcador se esta arrastrando
+            }
+
+            override fun onMarkerDragEnd(marker: Marker) {
+                //Codigo para cuando marcador termina de arrastrarse
+                val intent = Intent(this@MapsActivity, ProblemaActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+        })
 
     }
 

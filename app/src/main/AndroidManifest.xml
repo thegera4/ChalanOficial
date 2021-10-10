@@ -20,7 +20,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chalan">
         <activity
+            android:name=".activities.ProblemaActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
+        <activity
             android:name=".activities.BuscarOfrecerActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

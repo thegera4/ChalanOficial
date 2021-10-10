@@ -57,6 +57,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
             override fun onMarkerDragEnd(marker: Marker) {
                 //Codigo para cuando marcador termina de arrastrarse
+
+                /* TODO Alberto: agregar el codigo que permita obtener la informacion de la
+                *   locacion seleccionada por el usuario, mostrarla en el cuadrito del marcador
+                * y almacenar esa informacion. Se tendra que desplegar un cuadro de dialogo que
+                * le pregunte al usuario si esta seguro de que esa es la locacion donde requiere
+                * el servicio. Al dar si, se pasa a la siguiente pantalla (ProblemaActivity). Si da
+                * no, se cierra el cuadro de dialogo y se vuelve al mapa para seleccionar otra vez
+                * la locacion donde se quiere el servicio.
+                * Tambien agregar la captura de la informacion en caso de que el usuario use el
+                * cuadro de texto para introducir el codigo postal manualmente. Solo se almacenara
+                * la informacion por el momento */
                 val intent = Intent(this@MapsActivity, ProblemaActivity::class.java)
                 startActivity(intent)
                 finish()

@@ -43,6 +43,7 @@ open class BaseActivity : AppCompatActivity() {
         return FirebaseAuth.getInstance().currentUser!!.uid
     }
 
+    @Suppress("DEPRECATION")
     fun doubleBackToExit(){
         if (doubleBackToExitPressedOnce){
             super.onBackPressed()

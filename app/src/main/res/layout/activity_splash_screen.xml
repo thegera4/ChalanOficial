@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/fondosplash"
-    tools:context=".activities.SplashScreen">
+    android:background="@color/purple_700"
+    tools:context=".activities.SplashScreen"> <!-- background de splash-->
 
     <TextView
         android:id="@+id/tvNombreApp"

@@ -15,6 +15,7 @@ class RegistrarseActivity : BaseActivity() {
 
     private lateinit var binding: ActivityRegistrarseBinding
 
+    @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistrarseBinding.inflate(layoutInflater)

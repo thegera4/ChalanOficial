@@ -11,6 +11,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
 import com.app.chalan.R
 import com.app.chalan.activities.firebase.FirestoreClass
+import com.app.chalan.activities.maps.MapsActivity
 import com.app.chalan.activities.models.User
 import com.app.chalan.databinding.ActivityMainBinding
 import com.bumptech.glide.Glide
@@ -94,6 +95,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         findViewById<TextView>(R.id.tvNavUserName).text = user.name
     }
 
+    @Suppress("DEPRECATION")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode == Activity.RESULT_OK && requestCode == MY_PROFILE_REQUEST_CODE) {
@@ -103,6 +105,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         }
     }
 
+    @Suppress("DEPRECATION")
     //funcion de botones en navigation drawer
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){

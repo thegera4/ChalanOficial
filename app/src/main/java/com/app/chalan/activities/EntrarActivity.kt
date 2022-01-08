@@ -17,6 +17,7 @@ class EntrarActivity : BaseActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+    @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEntrarBinding.inflate(layoutInflater)

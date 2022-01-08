@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".activities.maps.MapsActivity">
+
+<com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/toolbarAppBarLayoutMap"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activities.MapsActivity">
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-   <com.google.android.material.appbar.AppBarLayout
-       android:id="@+id/toolbarAppBarLayoutMap"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:theme="@style/AppTheme.AppBarOverlay"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMapsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
 
-      <androidx.appcompat.widget.Toolbar
-          android:id="@+id/toolbarMapsActivity"
-          android:layout_width="match_parent"
-          android:layout_height="?attr/actionBarSize"
-          android:background="?attr/colorPrimary"
-          app:popupTheme="@style/AppTheme.PopupOverlay">
+    </androidx.appcompat.widget.Toolbar>
+</com.google.android.material.appbar.AppBarLayout>
 
-      </androidx.appcompat.widget.Toolbar>
-   </com.google.android.material.appbar.AppBarLayout>
+<TextView
+    android:id="@+id/tvDescripcionMaps"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/descripcion_mapa"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/toolbarAppBarLayoutMap"
+    app:layout_constraintBottom_toTopOf="@+id/map"/>
 
-   <TextView
-       android:id="@+id/tvDescripcionMaps"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="@string/descripcion_mapa"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/toolbarAppBarLayoutMap"
-       app:layout_constraintBottom_toTopOf="@+id/map"/>
+<fragment
+    android:id="@+id/map"
+    class="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="414dp"
+    android:layout_height="558dp"
+    app:layout_constraintBottom_toTopOf="@+id/cvCodigoPostal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.666"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tvDescripcionMaps" />
 
-   <fragment
-       android:id="@+id/map"
-       class="com.google.android.gms.maps.SupportMapFragment"
-       android:layout_width="414dp"
-       android:layout_height="558dp"
-       app:layout_constraintBottom_toTopOf="@+id/cvCodigoPostal"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.666"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/tvDescripcionMaps" />
+<androidx.cardview.widget.CardView
+    android:id="@+id/cvCodigoPostal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/map"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
 
-   <androidx.cardview.widget.CardView
-          android:id="@+id/cvCodigoPostal"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          app:layout_constraintTop_toBottomOf="@id/map"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintBottom_toBottomOf="parent">
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/CustomOutlineBox"
+        android:theme="@style/CustomOutlineBox"
+        app:endIconMode="clear_text"
+        android:layout_marginStart="@dimen/authentication_screen_til_marginStartEnd"
+        android:layout_marginEnd="@dimen/authentication_screen_til_marginStartEnd">
 
-         <com.google.android.material.textfield.TextInputLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             style="@style/CustomOutlineBox"
-             android:theme="@style/CustomOutlineBox"
-             app:endIconMode="clear_text"
-             android:layout_marginStart="@dimen/authentication_screen_til_marginStartEnd"
-             android:layout_marginEnd="@dimen/authentication_screen_til_marginStartEnd">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etCodigoPostal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/CodigoPostal"
+            android:inputType="number"
+            android:textSize="@dimen/et_text_size" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etCodigoPostal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/CodigoPostal"
-                android:inputType="number"
-                android:textSize="@dimen/et_text_size" />
-         </com.google.android.material.textfield.TextInputLayout>
-
-      </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

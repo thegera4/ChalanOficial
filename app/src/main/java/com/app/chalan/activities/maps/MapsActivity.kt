@@ -1,8 +1,11 @@
 package com.app.chalan.activities.maps
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import com.app.chalan.R
 import com.app.chalan.activities.ProblemaActivity
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -12,6 +15,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.app.chalan.databinding.ActivityMapsBinding
+import com.app.chalan.databinding.DialogCustomMapsBinding
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.Marker
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -48,9 +53,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // Agregar marcador en las coordenadas indicadas y hacer zoom de 14f
         val torreon = LatLng(25.53986916895781, -103.40568068906825)
-        mMap.addMarker(MarkerOptions().position(torreon).title("Torreón, Coah.")
+
+        mMap
+            .addMarker(MarkerOptions()
+            .position(torreon)
+            .title("Arrastrame al lugar del servicio")
+            .icon(BitmapDescriptorFactory.fromResource(R.drawable.tools24))
             .draggable(true))
+            ?.showInfoWindow()
+
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(torreon))
+
         val newLatLngZoom = CameraUpdateFactory.newLatLngZoom(torreon,14f)
         googleMap.animateCamera(newLatLngZoom)
 
@@ -71,21 +85,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 * locacion seleccionada por el usuario, mostrarla en el cuadrito del marcador
                 * y almacenar esa informacion. Se tendra que desplegar un cuadro de dialogo que
                 * le pregunte al usuario si esta seguro de que esa es la locacion donde requiere
-                * el servicio. Al dar si, se pasa a la siguiente pantalla (ProblemaActivity). Si da
-                * no, se cierra el cuadro de dialogo y se vuelve al mapa para seleccionar otra vez
-                * la locacion donde se quiere el servicio.
+                * el servicio (este cuadro de dialogo ya esta programado en la funcion customDialog.
+                * Al dar aceptar, se pasa a la siguiente pantalla (ProblemaActivity). Si da
+                * cancelar, se cierra el cuadro de dialogo y se vuelve al mapa para seleccionar otra
+                * vez la locacion donde se quiere el servicio.
                 * Tambien agregar la captura de la informacion en caso de que el usuario use el
                 * cuadro de texto para introducir el codigo postal manualmente. Solo se almacenara
                 * la informacion por el momento */
 
-                //Intent para al momento de arrastar marcador y dejarlo en una posicion, llevarlo al siguiente activity o pantalla
-                val intent = Intent(this@MapsActivity, ProblemaActivity::class.java)
-                startActivity(intent)
-                finish()
+                customDialog()
+
+
+
             }
         })
     }
 
+    //funcion para action bar
     private fun setupActionBar() {
         setSupportActionBar(binding.toolbarMapsActivity)
         val actionBar = supportActionBar
@@ -97,6 +113,33 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
+    //funcion para custom dialog
+    private fun customDialog(){
+
+        val binding: DialogCustomMapsBinding = DialogCustomMapsBinding.inflate(layoutInflater)
+
+        val customDialog = Dialog(this)
+
+        customDialog.setContentView(binding.root)
+        customDialog.setCancelable(false)
+        customDialog.setCanceledOnTouchOutside(false)
+
+
+        binding.tvCancelar.setOnClickListener {
+            customDialog.dismiss()
+        }
+
+        binding.tvAceptar.setOnClickListener {
+            //Intent para pasar a la siguiente pantalla
+            val intent = Intent(this@MapsActivity, ProblemaActivity::class.java)
+            startActivity(intent)
+
+            customDialog.dismiss()
+        }
+
+
+        customDialog.show()
+    }
 
 
 

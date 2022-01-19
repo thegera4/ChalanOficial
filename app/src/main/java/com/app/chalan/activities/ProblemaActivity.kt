@@ -15,6 +15,8 @@ class ProblemaActivity : AppCompatActivity() {
         binding = ActivityProblemaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupActionBar()
+
         /*TODO Alberto agregar la funcionalidad para que al dar click en la image placeholder
         el usuario tenga la opcion de abrir la galeria o la camara del telefono
         si seleccionara la camara, se debera mandar llamar a la app de camara del telefono
@@ -22,6 +24,19 @@ class ProblemaActivity : AppCompatActivity() {
         el usuario podra seleccionar desde la galeria de su telefono cualquier imagen para
         cargarla en esta seccion. */
 
+
+    }
+
+    //funcion para action bar
+    private fun setupActionBar() {
+        setSupportActionBar(binding.toolbarProblemaActivity)
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_white_color_back_24dp)
+            actionBar.setTitle(R.string.problema_describe_titulo)
+        }
+        binding.toolbarProblemaActivity.setNavigationOnClickListener { onBackPressed() }
 
     }
 

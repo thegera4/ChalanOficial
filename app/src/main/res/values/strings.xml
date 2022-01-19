@@ -24,7 +24,7 @@
     <string name="entrar">ENTRAR</string>
     <string name="albanil">Albañil</string>
     <string name="selecciona_el_servicio_que_buscas">Selecciona el servicio que buscas:</string>
-    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_maps">Selecciona el lugar</string>
     <string name="CodigoPostal">O Introduce el codigo postal manualmente</string>
     <string name="descripcion_mapa">Selecciona el lugar donde quieres el servicio:</string>
     <string name="problema_foto_referencia">Inserta una foto de referencia para tu problema o consulta:</string>
@@ -32,4 +32,9 @@
     <string name="omitir">Omitir</string>
     <string name="enviar">Enviar</string>
     <string name="problema_descripcion_usuario">Describe tu problema aqui</string>
+    <string name="estas_seguro">Estas seguro?</string>
+    <string name="custom_dialog_maps_text">Estas seguro de que la dirección seleccionada es la correcta?</string>
+    <string name="Cancelar">CANCELAR</string>
+    <string name="Aceptar">ACEPTAR</string>
+    <string name="problema_describe_titulo">Opcional: Describe tu problema</string>
 </resources>
